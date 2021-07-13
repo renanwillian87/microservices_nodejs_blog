@@ -7,8 +7,12 @@ export default () => {
     const [posts, setPosts] = useState({});
     
     const fetchPosts = async () => {
-        const res = await axios.get('http://localhost:4001/posts');
-        setPosts(res.data);
+        try {
+            const res = await axios.get('http://localhost:4003/posts');
+            setPosts(res.data);    
+        } catch (error) {
+            console.error(error);
+        }
     }
 
     useEffect(() => {
@@ -24,7 +28,7 @@ export default () => {
             >
                 <div className="card-body">
                     <h3>{post.title}</h3>
-                    <CommentList postId={post.id}/> 
+                    <CommentList comments={post.comments}/> 
                     <CommentCreate postId={post.id} />
                 </div>
             </div>
