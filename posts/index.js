@@ -31,6 +31,6 @@ app.post('/events', (req, res) => {
     console.log('Received Event:', req.body.type);
     res.send({});
 });
-app.listen(4001, () => {
-    console.log('Listening on 4001');
+app.listen(4000, () => {
+    console.log('Listening on 4000');
 });

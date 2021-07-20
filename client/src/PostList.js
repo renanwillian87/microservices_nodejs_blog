@@ -8,7 +8,7 @@ export default () => {
     
     const fetchPosts = async () => {
         try {
-            const res = await axios.get('http://localhost:4003/posts');
+            const res = await axios.get('http://localhost:4002/posts');
             setPosts(res.data);    
         } catch (error) {
             console.error(error);
